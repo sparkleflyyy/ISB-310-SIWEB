@@ -1,0 +1,157 @@
+/* Background luar */
+body {
+  margin: 0;
+  background-color: #4d83aa;
+  font-family: Arial, sans-serif;
+}
+
+/* Container utama */
+.container {
+  width: 800px;
+  height: 800px;
+  margin: 30px auto;
+  background-color: #4d83aa;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  background-color: #e2d800;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Binder bolong */
+.binder {
+  height: 20px;
+  background: radial-gradient(circle, #4d83aa 6px, transparent 7px) repeat-x;
+  background-size: 25px 20px;
+  background-position: center;
+}
+
+/* Judul */
+.header h1 {
+  margin: 10px 0 0 0;
+  color: #032152;
+  font-weight: bold;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+  display: flex;
+  align-items: flex-start; /* supaya kiri & kanan beda tinggi */
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 300px;
+  background-color: #ededed;
+  padding: 25px;
+  box-sizing: border-box;
+  border-right: 4px dotted #032152;
+}
+
+/* Judul sidebar */
+.sidebar h2 {
+  margin: 0;
+  color: #032152;
+  font-size: 26px;
+}
+
+/* Garis dotted horizontal */
+.line {
+  border-bottom: 3px dotted #032152;
+  margin: 10px 0 15px 0;
+}
+
+/* List */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.sidebar li {
+  color: #4d83aa;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  gap: 8px;
+}
+
+.search-box input {
+  padding: 6px;
+  border: 1px solid #bbb;
+  width: 160px;
+}
+
+.search-box button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #999;
+  background: linear-gradient(#eeeeee, #cccccc);
+  cursor: pointer;
+}
+
+/* ================= MAIN ================= */
+
+.main {
+  width: 500px;
+  background-color: #dcdcdc;
+  padding: 30px;
+  box-sizing: border-box;
+  min-height: 700px; /* lebih panjang dari sidebar */
+}
+
+/* Judul main */
+.main h2 {
+  margin: 0 0 30px -20px;
+  color: #032152;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Card tabel */
+.card {
+  width: 100%;
+  background-color: #9cbcd0;
+  border-top: 6px solid #032152;
+  border-bottom: 6px solid #032152;
+  overflow: hidden;
+}
+
+/* Table */
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: white;
+}
+
+.card th {
+  padding: 15px;
+  font-weight: bold;
+  color: #032152;
+}
+
+.card td {
+  padding: 15px;
+}
+
+/* Footer */
+.card-footer {
+  background-color: #e8eef2;
+  color: #032152;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+}
