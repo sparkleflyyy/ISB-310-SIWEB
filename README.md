@@ -1,12 +1,10 @@
 ---
-# Tugas ISB Sistem Informasi Berbasis WEB
+# Tugas ISB Sistem Informasi Berbasis WEB (Reguler)
 Repository ini berisi kumpulan tugas untuk mata kuliah ISB-310 Sistem Informasi Berbasis Web.
 ## Data Mahasiswa 
 - NRP  : 162023022
 - NAMA : Riyan Nurizqy
   
-## Daftar Tugas
+## Daftar branch Tugas
 
 - week 1
-- week 2
-- week 3
