@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    /* Background dengan gambar berulang (tiled/repeat) */
+    background-image: url('../assets/logoitenas.jpg');
+    background-repeat: repeat;
+    background-size: 150px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.main-card {
+    background-color: #D4A84B;
+    border: 6px solid #5C3D2E;
+    border-radius: 0;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Header dengan grid gambar berulang */
+.header-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.header-images .img-box {
+    width: 100%;
+    height: 120px;
+    background-image: url('../assets/gedungitenas.jpg');
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+/* Konten utama */
+.content {
+    padding: 15px 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Menu navigasi */
+.menu-section {
+    flex-shrink: 0;
+}
+
+.menu-row {
+    margin-bottom: 0;
+}
+
+.menu-link {
+    color: #6B4C9A;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 18px;
+    width: 140px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #8B7355;
+    display: block;
+    text-align: center;
+}
+
+.menu-link:hover {
+    text-decoration: underline;
+}
+
+/* Right Content Area */
+.right-content {
+    flex: 1;
+}
+
+.shout-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.shout-section span {
+    font-size: 16px;
+    color: #000;
+}
+
+.shout-btn {
+    padding: 8px 30px;
+    background-color: #C0C0C0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid #000;
+}
+
+.shout-btn:hover {
+    background-color: #A0A0A0;
+}
+
+/* Footer */
+.footer {
+    background-color: #D4920A;
+    text-align: center;
+    border-top: none;
+}
+
+.footer .nim {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+.footer .info {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.footer .info a {
+    text-decoration: underline;
+}
+
+/* Menu Makanan Styles */
+.menu-makanan {
+    margin: 0;
+}
+
+.food-table {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+}
+
+.food-table th {
+    background-color: #F5D77A;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: bold;
+    border: 2px solid #C4A84B;
+}
+
+.food-table td {
+    padding: 6px 12px;
+    border: 2px solid #C4A84B;
+    background-color: #F5D77A;
+}
+
+.food-table .reset-col {
+    background-color: transparent;
+    border: none;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+.food-name {
+    font-weight: normal;
+}
+
+.food-price {
+    font-weight: normal;
+}
+
+.input-pesan {
+    width: 50px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+.total-label {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 15px !important;
+}
+
+.input-total {
+    width: 80px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+.reset-btn {
+    padding: 15px 30px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.reset-btn:hover {
+    background-color: #444;
+}
+
+/* Calculator Styles */
+.calculator-section {
+    padding: 10px 0;
+}
+
+.calc-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.calc-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+.calc-operator {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #999;
+    cursor: pointer;
+}
+
+.calc-equal {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.calc-result {
+    width: 80px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.calc-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.calc-btn {
+    padding: 8px 25px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.calc-btn:hover {
+    background-color: #555;
+}

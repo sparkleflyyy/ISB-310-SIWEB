@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Awal Sistem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-card">
+        <!-- Header dengan 6 gambar (3x2 grid) -->
+        <div class="header-images">
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+        </div>
+
+        <!-- Konten Menu -->
+        <div class="content">
+            <div class="content-wrapper">
+                <!-- Menu Navigasi (Kiri) -->
+                <div class="menu-section">
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showHome()">Home</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showMenuMakanan()">Menu</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showCalculator()">Calculator</a>
+                    </div>
+                </div>
+
+                <!-- Konten Kanan (Shout atau Tabel) -->
+                <div class="right-content">
+                    <!-- Shout Section (Default) -->
+                    <div class="shout-section" id="shout-section">
+                        <span>klik button disamping >></span>
+                        <button class="shout-btn" onclick="shout()">Shout</button>
+                    </div>
+
+                    <!-- Menu Makanan Table (Hidden by default) -->
+                    <div id="menu-makanan" class="menu-makanan" style="display: none;">
+                        <table class="food-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Makanan/Minuman</th>
+                                    <th>Harga</th>
+                                    <th>Pesan</th>
+                                    <th class="reset-col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="food-name">Bakso Istimewa</td>
+                                    <td class="food-price">@ Rp 12000</td>
+                                    <td><input type="number" id="pesan1" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                    <td class="reset-col" rowspan="3"><button class="reset-btn" onclick="resetPesanan()">Reset</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="food-name">Soto Spesial</td>
+                                    <td class="food-price">@ Rp 10000</td>
+                                    <td><input type="number" id="pesan2" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="food-name">Mie Ayam Super</td>
+                                    <td class="food-price">@ Rp 15000</td>
+                                    <td><input type="number" id="pesan3" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Jumlah Total</td>
+                                    <td><input type="text" id="jumlahTotal" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Diskon</td>
+                                    <td><input type="text" id="diskon" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Jumlah Bayar</td>
+                                    <td><input type="text" id="jumlahBayar" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Calculator Section (Hidden by default) -->
+                    <div id="calculator-section" class="calculator-section" style="display: none;">
+                        <div class="calc-row">
+                            <input type="number" id="calcInput1" class="calc-input" placeholder="">
+                            <select id="calcOperator" class="calc-operator">
+                                <option value="*">*</option>
+                                <option value="/">/</option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="%">%</option>
+                                <option value="^">^</option>
+                            </select>
+                            <input type="number" id="calcInput2" class="calc-input" placeholder="">
+                            <span class="calc-equal">=</span>
+                            <input type="text" id="calcResult" class="calc-result" readonly>
+                        </div>
+                        <div class="calc-buttons">
+                            <button class="calc-btn" onclick="hitungCalc()">Hitung</button>
+                            <button class="calc-btn" onclick="resetCalc()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="nim">280224</div>
+            <div class="info">
+                Sistem Informasi | ITENAS 2024
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
