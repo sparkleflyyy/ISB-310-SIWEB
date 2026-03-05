@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tampilan Awal Sistem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="main-card">
+        <!-- Header dengan 6 gambar (3x2 grid) -->
+        <div class="header-images">
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+            <div class="img-box"></div>
+        </div>
+
+        <!-- Konten Menu -->
+        <div class="content">
+            <div class="content-wrapper">
+                <!-- Menu Navigasi (Kiri) -->
+                <div class="menu-section">
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showHome()">Home</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showMenuMakanan()">Menu</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showCalculator()">Calculator</a>
+                    </div>
+                    <div class="menu-row">
+                        <a href="#" class="menu-link" onclick="showGarisHidup()">Garis Hidup</a>
+                    </div>
+                </div>
+
+                <!-- Konten Kanan (Shout atau Tabel) -->
+                <div class="right-content">
+                    <!-- Shout Section (Default) -->
+                    <div class="shout-section" id="shout-section">
+                        <span>klik button disamping >></span>
+                        <button class="shout-btn" onclick="shout()">Shout</button>
+                    </div>
+
+                    <!-- Menu Makanan Table (Hidden by default) -->
+                    <div id="menu-makanan" class="menu-makanan" style="display: none;">
+                        <table class="food-table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Makanan/Minuman</th>
+                                    <th>Harga</th>
+                                    <th>Pesan</th>
+                                    <th class="reset-col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="food-name">Bakso Istimewa</td>
+                                    <td class="food-price">@ Rp 12000</td>
+                                    <td><input type="number" id="pesan1" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                    <td class="reset-col" rowspan="3"><button class="reset-btn" onclick="resetPesanan()">Reset</button></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="food-name">Soto Spesial</td>
+                                    <td class="food-price">@ Rp 10000</td>
+                                    <td><input type="number" id="pesan2" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td class="food-name">Mie Ayam Super</td>
+                                    <td class="food-price">@ Rp 15000</td>
+                                    <td><input type="number" id="pesan3" class="input-pesan" value="0" min="0" onchange="hitungTotal()"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Jumlah Total</td>
+                                    <td><input type="text" id="jumlahTotal" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Diskon</td>
+                                    <td><input type="text" id="diskon" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" class="total-label">Jumlah Bayar</td>
+                                    <td><input type="text" id="jumlahBayar" class="input-total" value="0" readonly></td>
+                                    <td class="reset-col"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Calculator Section (Hidden by default) -->
+                    <div id="calculator-section" class="calculator-section" style="display: none;">
+                        <div class="calc-row">
+                            <input type="number" id="calcInput1" class="calc-input" placeholder="">
+                            <select id="calcOperator" class="calc-operator">
+                                <option value="*">*</option>
+                                <option value="/">/</option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value="%">%</option>
+                                <option value="^">^</option>
+                            </select>
+                            <input type="number" id="calcInput2" class="calc-input" placeholder="">
+                            <span class="calc-equal">=</span>
+                            <input type="text" id="calcResult" class="calc-result" readonly>
+                        </div>
+                        <div class="calc-buttons">
+                            <button class="calc-btn" onclick="hitungCalc()">Hitung</button>
+                            <button class="calc-btn" onclick="resetCalc()">Reset</button>
+                        </div>
+                    </div>
+
+                    <!-- Garis Hidup Section (Hidden by default) -->
+                    <div id="garis-hidup-section" class="garis-hidup-section" style="display: none;">
+                        <h2 class="gh-title">Program Garis Hidup Tanggal Lahir</h2>
+                        <p class="gh-desc">Program ini merupakan program untuk mendeskripsikan karakter anda berdasarkan tanggal lahir yang kemudian hasilnya akan dikategorikan sebagai Garis Lahir 1 sampai 9.</p>
+                        <p class="gh-desc">Angka-angka dalam tanggal lahir Anda menyimpan banyak makna. Jumlahkan sampai menjadi satu angka, lalu lihat artinya? (misalnya Anda lahir tanggal 25 desember 1998, 25 + 12 + 1998 = 2 + 5 + 1 + 2 + 1 + 9 + 9 + 8 = 36 = 3 + 6 = 9)</p>
+                        
+                        <h3 class="gh-subtitle">Ayo Cari Tahu Kepribadian Kamu !</h3>
+                        
+                        <form id="garisHidupForm" class="gh-form">
+                            <div class="gh-form-row">
+                                <label>Masukkan Tanggal Lahir Anda</label>
+                                <span>:</span>
+                                <select id="ghTanggal">
+                                    <script>
+                                        for(let i=1; i<=31; i++) {
+                                            document.write('<option value="'+i+'">'+i+'</option>');
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                            <div class="gh-form-row">
+                                <label>Masukkan Bulan Lahir Anda</label>
+                                <span>:</span>
+                                <select id="ghBulan">
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="3">Maret</option>
+                                    <option value="4">April</option>
+                                    <option value="5">Mei</option>
+                                    <option value="6">Juni</option>
+                                    <option value="7">Juli</option>
+                                    <option value="8">Agustus</option>
+                                    <option value="9">September</option>
+                                    <option value="10">Oktober</option>
+                                    <option value="11">November</option>
+                                    <option value="12">Desember</option>
+                                </select>
+                            </div>
+                            <div class="gh-form-row">
+                                <label>Masukkan Tahun Lahir Anda</label>
+                                <span>:</span>
+                                <select id="ghTahun">
+                                    <script>
+                                        for(let i=1950; i<=2025; i++) {
+                                            document.write('<option value="'+i+'">'+i+'</option>');
+                                        }
+                                    </script>
+                                </select>
+                            </div>
+                            <div class="gh-buttons">
+                                <button type="button" onclick="hitungGarisHidup()">kirim</button>
+                                <button type="button" onclick="resetGarisHidup()">reset</button>
+                            </div>
+                        </form>
+
+                        <h3 class="gh-output-title">Output</h3>
+                        <div class="gh-output">
+                            <div class="gh-output-row">
+                                <label>Tanggal</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutTanggal" readonly>
+                            </div>
+                            <div class="gh-output-row">
+                                <label>Bulan</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutBulan" readonly>
+                            </div>
+                            <div class="gh-output-row">
+                                <label>Tahun</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutTahun" readonly>
+                            </div>
+                            <div class="gh-output-row">
+                                <label>Hasil 1</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutHasil1" readonly>
+                            </div>
+                            <div class="gh-output-row">
+                                <label>Hasil 2</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutHasil2" readonly>
+                            </div>
+                            <div class="gh-output-row">
+                                <label>Hasil Akhir</label>
+                                <span>:</span>
+                                <input type="text" id="ghOutHasilAkhir" readonly>
+                            </div>
+                        </div>
+
+                        <div id="ghHasilDeskripsi" class="gh-hasil-deskripsi"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="nim">280224</div>
+            <div class="info">
+                Sistem Informasi | ITENAS 2024
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
