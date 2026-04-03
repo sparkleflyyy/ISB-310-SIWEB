@@ -20,9 +20,6 @@ Struktur berkas penting:
 - `style.css` — Styling sederhana
 - `database.sql` — (opsional) skrip SQL untuk membuat/menyiapkan tabel
 
-Catatan kolom database:
-Kode pada proyek ini menggunakan kolom `username` (bukan `name`). Pastikan tabel `users` di database memiliki kolom `username`. Jika masih memakai `name`, silakan ubah skema atau jalankan migrasi berikut setelah melakukan backup:
-
 ```sql
 -- mengganti nama kolom (backup dulu sebelum menjalankan)
 ALTER TABLE users CHANGE name username VARCHAR(255);
